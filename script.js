@@ -4,7 +4,7 @@ let randomPassword = "";
 let randomArray = [ ];
 function generatePassword(){
     let = questionReturn1 = prompt("What would you like the length of your password to be?");
-    if ( questionReturn1 >=128 || questionReturn1 <= 8){
+    if ( questionReturn1 >=129 || questionReturn1 <= 7){
       alert("Please select a value between 8 and 128.");
       generatePassword()
     }; 
