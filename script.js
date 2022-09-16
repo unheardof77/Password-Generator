@@ -4,11 +4,11 @@ let randomPassword = "";
 let randomArray = [ ];
 function generatePassword(){
     let = questionReturn1 = prompt("What would you like the length of your password to be?");
-    if ( questionReturn1 <=128 && questionReturn1 >= 8){
-      
-    } else {
+    if ( questionReturn1 >=128 || questionReturn1 <= 8){
       alert("Please select a value between 8 and 128.");
-    };
+      generatePassword()
+    }; 
+    
     
     numeric = confirm("Would you like numeric characters in your password?");
     if (numeric){
@@ -28,19 +28,23 @@ function generatePassword(){
 
     let = questionReturn3 = confirm("Would you like uppercase letters included in your password?");
     if (questionReturn3){
-      questionReturn3 = ["A", "B", "C", "D", "E", "F", "G"]
+      questionReturn3 = ["A", "B", "C", "D", "E", "F", "G"];
       randomArray.push(... questionReturn3)
     };
     
     let = questionReturn4 = confirm("Would you like lowercase letters included in your password?");
     if (questionReturn4){
-      questionReturn4 = ["a", "b", "c", "d", "e", "f", "g"]
+      questionReturn4 = ["a", "b", "c", "d", "e", "f", "g"];
       randomArray.push(... questionReturn4)
     };
-    console.log(randomArray.length);
+    console.log(randomArray);
+    if(!questionReturn2 && !questionReturn3 && !questionReturn4){
+      alert("Must choose at least one character option.")
+      generatePassword()
+    }
     for ( i = 0; i < questionReturn1; i++){
 
-       randomPassword += randomArray[Math.floor(Math.random() * questionReturn1)+ 0];
+       randomPassword += randomArray[Math.floor(Math.random() * randomArray.length)];
     };
     
   };
