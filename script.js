@@ -28,17 +28,22 @@ function generatePassword(){
       questionReturn4 = ["a", "b", "c", "d", "e", "f", "g"]
       randomArray.push(... questionReturn4)
     };
-    console.log(randomArray)
+    console.log(randomArray.length);
+    for ( i = 0; i < questionReturn1; i++){
+
+      randomPassword = randomArray[Math.floor(Math.random() * questionReturn1)];
+    };
+
   };
 
 // Write password to the #password input
 function writePassword() {
   generatePassword();
-  var password = placeHolder;
+  var password = randomPassword;
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", writePassword);
