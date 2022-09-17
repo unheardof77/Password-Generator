@@ -8,23 +8,17 @@ function generatePassword(){
       alert("Please select a value between 8 and 128.");
       generatePassword()
     }; 
-    
-    
+
     numeric = confirm("Would you like numeric characters in your password?");
     if (numeric){
       randomArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
     };
-
-    
-
-    
     let = questionReturn2 = confirm("Would you like special characters in your password?");
     if (questionReturn2){
       questionReturn2 = [ "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "?" ];
       randomArray.push(... questionReturn2)
     };
-    
 
     let = questionReturn3 = confirm("Would you like uppercase letters included in your password?");
     if (questionReturn3){
@@ -37,13 +31,12 @@ function generatePassword(){
       questionReturn4 = ["a", "b", "c", "d", "e", "f", "g"];
       randomArray.push(... questionReturn4)
     };
-    console.log(randomArray);
+    
     if(!questionReturn2 && !questionReturn3 && !questionReturn4){
       alert("Must choose at least one character option.")
       generatePassword()
     }
     for ( i = 0; i < questionReturn1; i++){
-
        randomPassword += randomArray[Math.floor(Math.random() * randomArray.length)];
     };
     
@@ -54,7 +47,6 @@ function writePassword() {
   generatePassword();
   var password = randomPassword;
   var passwordText = document.querySelector("#password");
-  
   passwordText.value = password;
 }
 
