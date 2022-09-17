@@ -2,11 +2,13 @@
 var generateBtn = document.querySelector("#generate");
 let randomPassword = "";
 let randomArray = [ ];
+
+
 function generatePassword(){
     let = questionReturn1 = prompt("What would you like the length of your password to be?");
     if ( questionReturn1 >=129 || questionReturn1 <= 7){
       alert("Please select a value between 8 and 128.");
-      generatePassword()
+      generatePassword();
     }; 
 
     numeric = confirm("Would you like numeric characters in your password?");
@@ -35,7 +37,7 @@ function generatePassword(){
     if(!questionReturn2 && !questionReturn3 && !questionReturn4){
       alert("Must choose at least one character option.")
       generatePassword()
-    }
+    };
     for ( i = 0; i < questionReturn1; i++){
        randomPassword += randomArray[Math.floor(Math.random() * randomArray.length)];
     };
@@ -48,7 +50,7 @@ function writePassword() {
   var password = randomPassword;
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
